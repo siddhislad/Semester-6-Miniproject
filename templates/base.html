@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Vote, securely!</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="{%  static 'favicon.png' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	 <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet"> -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&display=swap" rel="stylesheet"> 
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">  
+<style type="text/css">
+  body {
+    background-color: #d0d0d0;
+  }
+  
+  .home_logo{
+    width: 80px;
+  }
+  .header{
+    font: serif;
+    color: #000000;
+  }
+  .header-right{
+    font: sans-serif;
+    color: #000000;
+    
+    float: right;
+  }
+  h1{
+    font-family: 'IM Fell French Canon SC', serif;
+    padding-top: 30px;
+    color: #000000;
+  }
+  #navigation_bar{
+    background-color: #000000;
+    margin: 0 auto -30px;
+  }
+  #explain{
+    font-family: serif;
+    font-size: 1.5em;
+    color: #000000;
+    padding-top: 50px;
+    text-align: center; 
+  }
+  .crele{
+    <!--For create elections button-->
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background-color: #000000;
+    font-size: 1.0em;
+    font-family: serif;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    display: block;
+  }
+  .demo{
+    <!--For ongoing elections button-->
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background-color: #000000;
+    font-size: 1.0em;
+    font-family: serif;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    display: block;
+  }
+  .nav-link{
+    font-family: serif;
+    color: #000000;
+    font-size: 1.3em;
+    margin-right: 10px;
+  }
+  #frontimg{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    max-width: 420px;
+    width: 100%;
+  }
+  .h1_features{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .features h3{
+     font-family: serif;
+     margin-top: 50px;
+     text-align: center;
+     margin-bottom: 30px;
+  }
+  .features p{
+    font-family: serif;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 30px; 
+  }
+
+  .ongoing{
+    /*padding-right: 50px;
+    padding-left: 50px;*/
+    background-color: #e6e7e8;
+    font-size: 1.0em;
+    font-family: serif;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline;
+    padding-bottom: 10px;
+    padding-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 100px;
+  }
+  .navigation_bar{
+  }
+  .navbar-toggler { 
+    border-color: #f2bc94; 
+  }
+  .navbar-toggler-icon { 
+      background-image: url( 
+        "data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 128, 0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
+  }
+
+</style>
+</head>
+<body>
+    <div class = "navigation_bar">
+      <!--Navigation bar background colour-->
+      <nav class="navbar navbar-expand-lg nav-fixed-top " style="background-color: #16C6E9">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'home'%}"><img src="{% static 'image/homenav.png'%}" class="home_logo" ></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link header" href="{% url 'about' %}">About<span class="sr-only">(current)</span></a></li>
+              <li class="nav-item">
+                <a class="nav-link header" href="{% url 'faq' %}">FAQ</a>
+              </li>
+              
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link header " href="{% url 'createadmin' %}">Admin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link header" href="{% url 'login' %}">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container" style="margin-center: 50px;">
+      <div class="form-row">
+        <div class="col-lg-12">
+          <h1><center><p style="font-size:100px">Vote, securely!</p></center></h1>
+          <p id="explain">Voting is the basis of any democracy. To keep democracy healthy voting process must be reliable and secure.<br>We optimise voting process with a secure steganography and visual cryptography.<br> It is three layer system for conducting online elections.</p>
+          <div class="form-row">
+            <div class="col-lg-7">
+              <a href="{% url 'createadmin' %}" class="btn btn-info btn-lg crele" role="button">Create Elections</a>
+            </div>
+            <div class="col-lg-2">
+              <a href="{% url 'ongoing' %}" class="btn btn-info btn-lg demo" role="button">Ongoing Elections</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><br>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
